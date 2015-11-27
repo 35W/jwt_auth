@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   scope module: 'api' do
     namespace :v1 do
       get '/' => 'home#index'
-      post 'signin' => 'authentication#create', as: :signin
+      match 'signin' => 'authentication#create', as: :signin, via: [ :post, :options]
     end
   end
   
