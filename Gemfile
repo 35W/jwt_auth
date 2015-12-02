@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'devise'
 gem 'jwt'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'active_model_serializers', :git => 'https://github.com/rails-api/active_model_serializers.git'
+gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'

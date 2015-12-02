@@ -15,7 +15,6 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     @current_user ||= begin
                         @decoded_auth_token ||= decoded_auth_token
-                        p @decoded_auth_token
                         User.find( @decoded_auth_token[:user_id].to_i )
                       rescue JWT::ExpiredSignature
                         authentication_timeout
@@ -30,7 +29,7 @@ class ApplicationController < ActionController::Base
   end
   
   def access_denied
-    render json: { errors: ['Not Authorized To Access Resource'] }, status: :forbidden
+    render json: { errors: ['Not Authorized'] }, status: :forbidden
   end
   
   def authentication_timeout

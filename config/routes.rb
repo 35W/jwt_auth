@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       get '/' => 'home#index'
       match 'signin' => 'authentication#create', as: :signin, via: [ :post, :options]
+      
+      resources :users
     end
   end
   
