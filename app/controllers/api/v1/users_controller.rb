@@ -6,7 +6,6 @@ module Api::V1
     def index
       page, per = page_params( params )
       
-      
       users = User.order(:id).page( page ).per( per )
       render json: users
     end
