@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
                         User.find( @decoded_auth_token[:user_id].to_i )
                       rescue JWT::ExpiredSignature
                         authentication_timeout
-                      rescue JWT::VerificationError, JWT::DecodeError
+                      rescue JWT::VerificationError, JWT::DecodeError, ActiveRecord::RecordNotFound
                         access_denied
                       end
   end
