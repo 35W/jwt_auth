@@ -1,3 +1,1 @@
-require 'json_api_with_page'
-
-ActiveModel::Serializer.config.adapter = JsonApiWithPage
+ActiveModel::Serializer.config.adapter = :json_api
